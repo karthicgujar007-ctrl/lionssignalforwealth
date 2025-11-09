@@ -674,7 +674,7 @@ let intervalId = null;
 
 async function checkAuth(){
   try{
-    const res = await fetch('/api/auth_status');
+    const res = await fetch('https://lionssignalforwealth.onrender.com/api/auth_status');
     const js = await res.json();
     const authAlert = document.getElementById('authAlert');
     if(!js.authorized){
@@ -698,7 +698,7 @@ async function fetchChain(){
   const tf = strategy === 'm75' ? '75' : document.getElementById('tf').value;
   try{
     // Fetch option chain data
-    const res = await fetch(`/api/option_chain?symbol=${encodeURIComponent(symbol)}&tf=${encodeURIComponent(tf)}&strategy=${encodeURIComponent(strategy)}`);
+    const res = await fetch('https://lionssignalforwealth.onrender.com/api/option_chain?symbol=${encodeURIComponent(symbol)}&tf=${encodeURIComponent(tf)}&strategy=${encodeURIComponent(strategy)}`);
     const js = await res.json();
     if(js.error){
       if(js.auth_required){
@@ -739,7 +739,7 @@ async function fetchChain(){
     
     // Fetch underlying OHLC data for all timeframes
     try {
-      const underlyingRes = await fetch(`/api/underlying_ohlc?symbol=${encodeURIComponent(symbol)}&strategy=${encodeURIComponent(strategy)}`);
+      const underlyingRes = await fetch(`https://lionssignalforwealth.onrender.com/api/underlying_ohlc?symbol=${encodeURIComponent(symbol)}&strategy=${encodeURIComponent(strategy)}`);
       const underlyingJs = await underlyingRes.json();
       if(!underlyingJs.error) {
         renderUnderlying(underlyingJs, strategy);
@@ -1544,4 +1544,5 @@ checkAuth().then(authorized => {
 });
 </script>
 </body>
+
 </html>
