@@ -1,0 +1,34 @@
+{
+    "email": "karthicgujar007@gmail.com",
+    "exchanges": [
+        "NFO",
+        "NSE",
+        "BSE",
+        "MCX",
+        "CDS",
+        "BFO",
+        "BCD"
+    ],
+    "products": [
+        "OCO",
+        "D",
+        "CO",
+        "I"
+    ],
+    "broker": "UPSTOX",
+    "user_id": "6DB4A9",
+    "user_name": "UTTAM RAO GUJAR KARTHIC GUJAR",
+    "order_types": [
+        "MARKET",
+        "LIMIT",
+        "SL",
+        "SL-M"
+    ],
+    "user_type": "individual",
+    "poa": false,
+    "ddpi": false,
+    "is_active": true,
+    "access_token": "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI2REI0QTkiLCJqdGkiOiI2OTEwM2I1MzAwMGE4YzY0YWM5OGY4MWEiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzYyNjcxNDQzLCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3NjI3MjU2MDB9.5bV0oar41xnXRcVcsqVdhPXggcjVoWzHEWeP8TESiCM",
+    "extended_token": null,
+    "expires_at": 1762757785.4526384
+}
