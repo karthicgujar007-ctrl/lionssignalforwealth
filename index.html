@@ -1,0 +1,1547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Lion's Signal of Wealth</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --above: #d1fae5;
+  --atm: #fef3c7;
+  --below: #fee2e2;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --card-bg: #ffffff;
+  --text: #111827;
+  --text-light: #6b7280;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header .logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+}
+
+.header .slogan {
+  color: var(--text-light);
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 4px;
+  margin-left: 64px;
+  font-weight: 400;
+}
+
+.header p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.header .last-update {
+  color: var(--text-light);
+  font-size: 13px;
+  margin-top: 8px;
+  margin-left: 64px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header .last-update strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+#authAlert {
+  display: none;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1px solid var(--warning);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#authAlert strong {
+  color: #92400e;
+  font-weight: 600;
+}
+
+#authAlert a {
+  margin-left: 12px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: white;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+#authAlert a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  font-size: 14px;
+  font-weight: 500;
+  background: white;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 140px;
+}
+
+select:hover {
+  border-color: var(--primary);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+button {
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: white;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+
+.table-wrap {
+  overflow: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 920px;
+  background: white;
+}
+
+thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+thead th {
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+thead tr:first-child th {
+  font-size: 14px;
+  padding: 14px 12px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+tbody td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+.col-strike {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  background: #f3f4f6 !important;
+  border-left: 3px solid var(--primary);
+  border-right: 3px solid var(--primary);
+}
+
+#spot-price-header {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--primary);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+  border-left: 3px solid var(--warning);
+  border-right: 3px solid var(--warning);
+}
+
+/* M75 Strategy Visual Alerts */
+.m75-alert-near {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+  border: 2px solid var(--warning) !important;
+  font-weight: 700 !important;
+  animation: pulse-alert 2s ease-in-out infinite;
+}
+
+@keyframes pulse-alert {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+  }
+}
+
+/* M75 Strategy Signals */
+.m75-signal {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.m75-signal-buy {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.m75-signal-watch {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.3);
+}
+
+.m75-signal-buy-opposite {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.above td {
+  background: var(--above);
+}
+
+.above td.col-strike {
+  background: #a7f3d0 !important;
+}
+
+.atm td {
+  background: var(--atm);
+  font-weight: 700;
+  border-top: 2px solid var(--warning);
+  border-bottom: 2px solid var(--warning);
+}
+
+.atm td.col-strike {
+  background: #fde68a !important;
+  font-size: 18px;
+  color: #92400e;
+}
+
+.below td {
+  background: var(--below);
+}
+
+.below td.col-strike {
+  background: #fecaca !important;
+}
+
+.empty-cell {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-light);
+}
+
+.loading::after {
+  content: "...";
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: "."; }
+  40% { content: ".."; }
+  60%, 100% { content: "..."; }
+}
+
+/* Box Strategy Styles */
+.box-strategy-container {
+  display: none; /* Hidden by default, shown when strategy is "box" */
+}
+
+.box-strategy-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.box-table-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.box-table-scroll {
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.box-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.box-table th {
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.box-table td {
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.strike-fixed {
+  position: sticky !important;
+  left: 0 !important;
+  z-index: 5 !important;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.atm-strike {
+  background: #fbbf24 !important;
+  font-weight: 700 !important;
+}
+
+.atm-strike td {
+  background: #fbbf24 !important;
+  color: #000 !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
+  }
+  
+  .header h1 {
+    font-size: 22px;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>
+      <img src="lion-logo.png" alt="Lion Logo" class="logo" onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='inline';">
+      <span class="logo-fallback" style="display: none; font-size: 48px;">🦁</span>
+      The Lion's Signal of Wealth
+    </h1>
+    <p class="slogan">When Strength Leads, Stability Follows, and Intuition Reveals.</p>
+    <p class="last-update" id="lastUpdate">Last updated: <strong>—</strong></p>
+  </div>
+
+  <div id="authAlert" class="card">
+    <strong>⚠️ Authorization Required:</strong> Please authorize with Upstox to fetch data.
+    <a href="/authorize" target="_blank">Authorize Now</a>
+    <a href="/auth_debug" target="_blank">Debug Config</a>
+  </div>
+
+  <div class="card">
+    <div class="controls">
+      <div class="control-group">
+        <label>Symbol</label>
+        <select id="symbol">
+          <optgroup label="Indices">
+            <option>NIFTY</option>
+            <option>BANKNIFTY</option>
+            <option>FINNIFTY</option>
+          </optgroup>
+          <optgroup label="NIFTY 50 Stocks">
+            <option>RELIANCE</option>
+            <option>TCS</option>
+            <option>INFY</option>
+            <option>HDFCBANK</option>
+            <option>HINDUNILVR</option>
+            <option>ICICIBANK</option>
+            <option>BHARTIARTL</option>
+            <option>SBIN</option>
+            <option>BAJFINANCE</option>
+            <option>ITC</option>
+            <option>KOTAKBANK</option>
+            <option>LT</option>
+            <option>AXISBANK</option>
+            <option>ASIANPAINT</option>
+            <option>MARUTI</option>
+            <option>TITAN</option>
+            <option>ULTRACEMCO</option>
+            <option>SUNPHARMA</option>
+            <option>NESTLEIND</option>
+            <option>ONGC</option>
+            <option>WIPRO</option>
+            <option>HCLTECH</option>
+            <option>POWERGRID</option>
+            <option>NTPC</option>
+            <option>TATAMOTORS</option>
+            <option>INDUSINDBK</option>
+            <option>JSWSTEEL</option>
+            <option>TECHM</option>
+            <option>ADANIENT</option>
+            <option>TATASTEEL</option>
+            <option>BAJAJFINSV</option>
+            <option>DIVISLAB</option>
+            <option>HDFCLIFE</option>
+            <option>DRREDDY</option>
+            <option>CIPLA</option>
+            <option>APOLLOHOSP</option>
+            <option>M&M</option>
+            <option>COALINDIA</option>
+            <option>BPCL</option>
+            <option>HEROMOTOCO</option>
+            <option>EICHERMOT</option>
+            <option>ADANIPORTS</option>
+            <option>GRASIM</option>
+            <option>MARICO</option>
+            <option>VEDL</option>
+            <option>PIDILITIND</option>
+            <option>GODREJCP</option>
+            <option>DABUR</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Strategy</label>
+        <select id="strategy">
+          <option value="m75">M75 Strategy</option>
+          <option value="box" selected>Box Strategy</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label>Timeframe</label>
+        <select id="tf">
+          <option value="5">5m</option>
+          <option value="1">1m</option>
+          <option value="15">15m</option>
+          <option value="30">30m</option>
+          <option value="60">60m</option>
+          <option value="D">Daily</option>
+        </select>
+      </div>
+      <div class="control-group" id="m75-timeframe-info" style="display: none; padding: 8px 14px; background: #fff3cd; border-radius: 8px; border: 2px solid #ffc107;">
+        <label style="color: #856404; font-weight: 600;">M75 Strategy: Timeframe locked to 75min</label>
+      </div>
+      <button id="fetchBtn">🔄 Fetch Data</button>
+      <div class="checkbox-group">
+        <input id="auto" type="checkbox">
+        <label for="auto">Auto-refresh (30s)</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="padding: 0;">
+    <div class="table-wrap">
+      <table id="option-chain-table">
+        <thead>
+          <tr id="option-header-row1">
+            <th colspan="5">CALLS (CE)</th>
+            <th>STRIKE PRICE</th>
+            <th colspan="5">PUTS (PE)</th>
+          </tr>
+          <tr id="option-header-row2">
+            <th>Close</th>
+            <th>Low</th>
+            <th>High</th>
+            <th>Open</th>
+            <th>LTP</th>
+            <th id="spot-price-header" class="col-strike">—</th>
+            <th>LTP</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <tr>
+            <td colspan="11" class="loading">Loading data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-bottom: 16px; font-size: 20px; color: var(--text);">Stock / Index</h2>
+    <div class="table-wrap">
+      <table id="underlying-table">
+        <thead>
+          <tr id="underlying-header-row">
+            <th>Timeframe</th>
+            <th>Open</th>
+            <th>High</th>
+            <th>Low</th>
+            <th>Close</th>
+            <th>LTP</th>
+          </tr>
+        </thead>
+        <tbody id="underlying-body">
+          <tr>
+            <td colspan="6" class="loading">Loading underlying data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const body = document.getElementById('body');
+let intervalId = null;
+
+async function checkAuth(){
+  try{
+    const res = await fetch('/api/auth_status');
+    const js = await res.json();
+    const authAlert = document.getElementById('authAlert');
+    if(!js.authorized){
+      authAlert.style.display = 'block';
+      return false;
+    }else{
+      authAlert.style.display = 'none';
+      return true;
+    }
+  }catch(e){
+    console.error(e);
+    return false;
+  }
+}
+
+async function fetchChain(){
+  const symbol = document.getElementById('symbol').value;
+  const strategy = document.getElementById('strategy').value;
+  // For M75 Strategy, always use 75min timeframe (ignore tf dropdown)
+  // For Box Strategy, use selected timeframe (5m, 15m, 30m, 60m, Daily)
+  const tf = strategy === 'm75' ? '75' : document.getElementById('tf').value;
+  try{
+    // Fetch option chain data
+    const res = await fetch(`/api/option_chain?symbol=${encodeURIComponent(symbol)}&tf=${encodeURIComponent(tf)}&strategy=${encodeURIComponent(strategy)}`);
+    const js = await res.json();
+    if(js.error){
+      if(js.auth_required){
+        document.getElementById('authAlert').style.display = 'block';
+        // Update the auth alert link if auth_url is provided
+        if(js.auth_url){
+          const authLink = document.querySelector('#authAlert a[href="/authorize"]');
+          if(authLink){
+            authLink.href = js.auth_url;
+            authLink.target = '_blank';
+          }
+        }
+        // Show popup with authorization URL
+        const authUrl = js.auth_url || '/authorize';
+        const confirmAuth = confirm(
+          "⚠️ Authorization Required!\n\n" +
+          "Your Upstox token has expired or is invalid.\n\n" +
+          "Click OK to open the authorization page in a new tab.\n\n" +
+          "After authorizing, refresh this page to continue."
+        );
+        if(confirmAuth){
+          window.open(authUrl, '_blank');
+        }
+      }else{
+        let errorMsg = js.error.message || js.error || JSON.stringify(js);
+        // Check if it's a market closed error
+        if(js.error === "Market is closed" || (typeof js.error === 'string' && js.error.toLowerCase().includes('closed'))){
+          errorMsg = "⚠️ Market is closed (holiday or outside trading hours)\n\nLTP data is only available during market hours.\n\n" + errorMsg;
+        }
+        alert("Error: " + errorMsg);
+      }
+      return;
+    }
+    render(js, strategy);
+    
+    // Update last update time after successful data fetch
+    updateLastUpdateTime();
+    
+    // Fetch underlying OHLC data for all timeframes
+    try {
+      const underlyingRes = await fetch(`/api/underlying_ohlc?symbol=${encodeURIComponent(symbol)}&strategy=${encodeURIComponent(strategy)}`);
+      const underlyingJs = await underlyingRes.json();
+      if(!underlyingJs.error) {
+        renderUnderlying(underlyingJs, strategy);
+        // Update time again after underlying data is fetched
+        updateLastUpdateTime();
+      } else {
+        console.error("Error fetching underlying OHLC:", underlyingJs.error);
+      }
+    } catch(e) {
+      console.error("Error fetching underlying OHLC:", e);
+    }
+  }catch(e){
+    console.error(e);
+    alert("Fetch error: " + e);
+  }
+}
+
+function formatPrice(price) {
+  if (!price && price !== 0) return '<span class="empty-cell">—</span>';
+  return parseFloat(price).toFixed(2);
+}
+
+// Function to update last update time
+function updateLastUpdateTime() {
+  const lastUpdateElement = document.getElementById('lastUpdate');
+  if (lastUpdateElement) {
+    const now = new Date();
+    // Format: "DD-MM-YYYY HH:MM:SS"
+    const dateStr = String(now.getDate()).padStart(2, '0') + '-' + 
+                    String(now.getMonth() + 1).padStart(2, '0') + '-' + 
+                    now.getFullYear();
+    const timeStr = String(now.getHours()).padStart(2, '0') + ':' + 
+                    String(now.getMinutes()).padStart(2, '0') + ':' + 
+                    String(now.getSeconds()).padStart(2, '0');
+    lastUpdateElement.innerHTML = `Last updated: <strong>${dateStr} ${timeStr}</strong>`;
+  }
+}
+
+// Function to find the closest key value to LTP and return which key it is
+function findClosestKeyToLTP(ltp, boxValues) {
+  if (!ltp || ltp === 0 || !boxValues) {
+    return null;
+  }
+  
+  const ltpFloat = parseFloat(ltp) || 0;
+  if (ltpFloat === 0) return null;
+  
+  // Define all key values to check
+  const keysToCheck = [
+    { key: 'pl3h', value: boxValues.pl3h },
+    { key: 'pl3m', value: boxValues.pl3m },
+    { key: 'pl3l', value: boxValues.pl3l },
+    { key: 'pdc', value: boxValues.pdc },
+    { key: 'pdo', value: boxValues.pdo },
+    { key: 'pdh', value: boxValues.pdh },
+    { key: 'pdl', value: boxValues.pdl },
+    { key: 'br_t', value: boxValues.br_t },
+    { key: 'br_r', value: boxValues.br_r },
+    { key: 'fch', value: boxValues.fch },
+    { key: 'fcm', value: boxValues.fcm },
+    { key: 'fcl', value: boxValues.fcl },
+    { key: 'be_t', value: boxValues.be_t },
+    { key: 'be_r', value: boxValues.be_r }
+  ];
+  
+  // Calculate distance for each valid key value
+  let closestKey = null;
+  let minDistance = Infinity;
+  const proximityThreshold = 0.01; // 1% threshold - values within 1% are considered "near"
+  
+  keysToCheck.forEach(({ key, value }) => {
+    const valueFloat = parseFloat(value);
+    if (valueFloat && valueFloat > 0) {
+      // Calculate percentage distance: |value - ltp| / ltp
+      const distance = Math.abs(valueFloat - ltpFloat) / ltpFloat;
+      
+      // Only consider values within the proximity threshold
+      if (distance <= proximityThreshold && distance < minDistance) {
+        minDistance = distance;
+        closestKey = key;
+      }
+    }
+  });
+  
+  return closestKey;
+}
+
+// Function to format price with bold if it's the closest key to LTP
+function formatPriceWithBoldForLTP(price, key, closestKey) {
+  const formatted = formatPrice(price);
+  if (key === closestKey) {
+    return `<strong style="font-weight: 700; font-size: 1.05em;">${formatted}</strong>`;
+  }
+  return formatted;
+}
+
+function renderBoxStrategy(js) {
+  // Hide the default option chain table and show Box Strategy tables
+  const defaultTable = document.getElementById('option-chain-table');
+  let boxTablesContainer = document.getElementById('box-strategy-tables');
+  
+  if (defaultTable) {
+    const tableWrap = defaultTable.closest('.table-wrap');
+    if (tableWrap) tableWrap.style.display = 'none';
+  }
+  
+  if (!boxTablesContainer) {
+    // Create Box Strategy tables container if it doesn't exist
+    const card = defaultTable ? defaultTable.closest('.card') : null;
+    if (card) {
+      boxTablesContainer = document.createElement('div');
+      boxTablesContainer.id = 'box-strategy-tables';
+      boxTablesContainer.className = 'box-strategy-container';
+      card.appendChild(boxTablesContainer);
+    } else {
+      console.error('Could not find card container for Box Strategy tables');
+      return;
+    }
+  }
+  
+  boxTablesContainer.style.display = 'block';
+  
+  const strikes = js.strikes || [];
+  const boxValues = js.box_strategy || {};
+  const proximity = js.box_proximity || {};
+  const ltp = parseFloat(js.ltp) || 0;
+  
+  // Find ATM strike
+  let atmStrike = null;
+  let minDiff = Infinity;
+  strikes.forEach(s => {
+    const diff = Math.abs(s.strike - ltp);
+    if (diff < minDiff) {
+      minDiff = diff;
+      atmStrike = s.strike;
+    }
+  });
+  
+  // Build HTML for Option Chain Table only
+  let html = `
+    <div class="box-strategy-wrapper">
+      <!-- Option Chain Table -->
+      <div class="box-table-container box-chain-table">
+        <h3 class="box-table-title" style="background: #6366f1; color: white; padding: 12px; margin: 0; border-radius: 8px 8px 0 0;">Option Chain Table</h3>
+        <div class="box-table-scroll" style="position: relative;">
+          <table class="box-table" style="background: white;">
+            <thead>
+              <tr style="background: #6366f1; color: white;">
+                <th colspan="15" style="text-align: center;">CALLS (CE)</th>
+                <th class="strike-fixed" style="background: #fbbf24; color: #000; position: sticky; left: 0; z-index: 10;">STRIKE PRICE</th>
+                <th colspan="15" style="text-align: center;">PUTS (PE)</th>
+              </tr>
+              <tr style="background: #6366f1; color: white;">
+                <th>PL3H</th><th>PL3M</th><th>PL3L</th><th>PDC</th><th>PDO</th><th>PDH</th><th>PDL</th><th>BR.T</th><th>BR.R</th><th>FCH</th><th>FCM</th><th>FCL</th><th>BE.T</th><th>BE.R</th><th>LTP</th>
+                <th class="strike-fixed" style="background: #fbbf24; color: #000; position: sticky; left: 0; z-index: 10;">${formatPrice(ltp)}</th>
+                <th>LTP</th><th>BR.R</th><th>BR.T</th><th>FCH</th><th>FCM</th><th>FCL</th><th>BE.R</th><th>BE.T</th><th>PDH</th><th>PDL</th><th>PDC</th><th>PDO</th><th>PL3H</th><th>PL3M</th><th>PL3L</th>
+              </tr>
+            </thead>
+            <tbody>
+  `;
+  
+  // Add all strikes to option chain table
+  strikes.forEach(strike => {
+    const ce = strike.ce || {};
+    const pe = strike.pe || {};
+    const ceLtp = ce.ltp || null;
+    const peLtp = pe.ltp || null;
+    // Get box values for CE and PE options (not underlying)
+    const ceBoxValues = ce.box_values || {};
+    const peBoxValues = pe.box_values || {};
+    
+    // Find closest key value to LTP for CE and PE
+    const ceClosestKey = findClosestKeyToLTP(ceLtp, ceBoxValues);
+    const peClosestKey = findClosestKeyToLTP(peLtp, peBoxValues);
+    
+    const isAtm = strike.strike === atmStrike;
+    // Determine color class: below ATM (green), above ATM (red), ATM (yellow)
+    let rowClass = '';
+    let strikeBg = 'white';
+    if (isAtm) {
+      rowClass = 'atm-strike';
+      strikeBg = '#fbbf24';
+    } else if (strike.strike < atmStrike) {
+      // Below ATM: Green background
+      rowClass = 'above';
+      strikeBg = '#a7f3d0';
+    } else {
+      // Above ATM: Red background
+      rowClass = 'below';
+      strikeBg = '#fecaca';
+    }
+    
+    html += `
+      <tr class="${rowClass}">
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pl3h, 'pl3h', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pl3m, 'pl3m', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pl3l, 'pl3l', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pdc, 'pdc', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pdo, 'pdo', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pdh, 'pdh', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.pdl, 'pdl', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.br_t, 'br_t', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.br_r, 'br_r', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.fch, 'fch', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.fcm, 'fcm', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.fcl, 'fcl', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.be_t, 'be_t', ceClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(ceBoxValues.be_r, 'be_r', ceClosestKey)}</td>
+        <td style="font-weight: 600;">${formatPrice(ceLtp)}</td>
+        <td class="strike-fixed ${rowClass}" style="background: ${strikeBg}; position: sticky; left: 0; z-index: 5; font-weight: 600;">${strike.strike}</td>
+        <td style="font-weight: 600;">${formatPrice(peLtp)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.br_r, 'br_r', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.br_t, 'br_t', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.fch, 'fch', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.fcm, 'fcm', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.fcl, 'fcl', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.be_r, 'be_r', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.be_t, 'be_t', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pdh, 'pdh', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pdl, 'pdl', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pdc, 'pdc', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pdo, 'pdo', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pl3h, 'pl3h', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pl3m, 'pl3m', peClosestKey)}</td>
+        <td>${formatPriceWithBoldForLTP(peBoxValues.pl3l, 'pl3l', peClosestKey)}</td>
+      </tr>
+    `;
+  });
+  
+  html += `
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  const container = document.getElementById('box-strategy-tables');
+  if (container) {
+    container.innerHTML = html;
+  }
+}
+
+// Function to calculate signal based on priority conditions
+function calculateSignal(ltp, boxValues, ohlc) {
+  if (!ltp || !boxValues) {
+    return { 
+      signal: "Neutral / Wait", 
+      symbol: "–", 
+      description: "No signal",
+      boldKeys: []
+    };
+  }
+  
+  const ltpFloat = parseFloat(ltp) || 0;
+  const brT = parseFloat(boxValues.br_t) || 0;
+  const brR = parseFloat(boxValues.br_r) || 0;
+  const beT = parseFloat(boxValues.be_t) || 0;
+  const beR = parseFloat(boxValues.be_r) || 0;
+  const high = parseFloat(ohlc?.h) || 0;
+  const low = parseFloat(ohlc?.l) || 0;
+  const mid = parseFloat(boxValues.fcm) || 0;
+  const pdh = parseFloat(boxValues.pdh) || 0;
+  const pdl = parseFloat(boxValues.pdl) || 0;
+  const pdc = parseFloat(boxValues.pdc) || 0;
+  const pl3h = parseFloat(boxValues.pl3h) || 0;
+  const pl3m = parseFloat(boxValues.pl3m) || 0;
+  const pl3l = parseFloat(boxValues.pl3l) || 0;
+  
+  // Priority 1: LTP >= BR.R
+  if (brR > 0 && ltpFloat >= brR) {
+    return { 
+      signal: "Strong BUY", 
+      symbol: "SB", 
+      description: "Strong bullish breakout beyond reversal range",
+      boldKeys: ['br_r', 'ltp']
+    };
+  }
+  
+  // Priority 2: LTP <= BE.R
+  if (beR > 0 && ltpFloat <= beR) {
+    return { 
+      signal: "Strong SELL", 
+      symbol: "SS", 
+      description: "Strong bearish breakdown beyond reversal range",
+      boldKeys: ['be_r', 'ltp']
+    };
+  }
+  
+  // Priority 3: LTP >= BR.T and LTP < BR.R
+  if (brT > 0 && brR > 0 && ltpFloat >= brT && ltpFloat < brR) {
+    return { 
+      signal: "BUY Zone", 
+      symbol: "BZ", 
+      description: "Inside bullish trigger zone",
+      boldKeys: ['br_t', 'br_r', 'ltp']
+    };
+  }
+  
+  // Priority 4: LTP <= BE.T and LTP > BE.R
+  if (beT > 0 && beR > 0 && ltpFloat <= beT && ltpFloat > beR) {
+    return { 
+      signal: "SELL Zone", 
+      symbol: "SZ", 
+      description: "Inside bearish trigger zone",
+      boldKeys: ['be_t', 'be_r', 'ltp']
+    };
+  }
+  
+  // Priority 5: LTP > BE.T and LTP < BR.T
+  if (beT > 0 && brT > 0 && ltpFloat > beT && ltpFloat < brT) {
+    return { 
+      signal: "Watch Zone", 
+      symbol: "WZ", 
+      description: "Between bullish and bearish triggers",
+      boldKeys: ['be_t', 'br_t', 'ltp']
+    };
+  }
+  
+  // Priority 6: abs(LTP - BR.T) <= 0.0005 * LTP
+  if (brT > 0 && ltpFloat > 0 && Math.abs(ltpFloat - brT) <= 0.0005 * ltpFloat) {
+    return { 
+      signal: "Watch Near Breakout", 
+      symbol: "WZ↑", 
+      description: "Near bullish trigger",
+      boldKeys: ['br_t', 'ltp']
+    };
+  }
+  
+  // Priority 7: abs(LTP - BE.T) <= 0.0005 * LTP
+  if (beT > 0 && ltpFloat > 0 && Math.abs(ltpFloat - beT) <= 0.0005 * ltpFloat) {
+    return { 
+      signal: "Watch Near Breakdown", 
+      symbol: "WZ↓", 
+      description: "Near bearish trigger",
+      boldKeys: ['be_t', 'ltp']
+    };
+  }
+  
+  // Priority 8: LTP > PL3H
+  if (pl3h > 0 && ltpFloat > pl3h) {
+    return { 
+      signal: "Strong BUY (PL3H)", 
+      symbol: "SB3H", 
+      description: "Breaking above last 3-candle high → strength",
+      boldKeys: ['pl3h', 'ltp']
+    };
+  }
+  
+  // Priority 9: LTP < PL3L
+  if (pl3l > 0 && ltpFloat < pl3l) {
+    return { 
+      signal: "Strong SELL (PL3L)", 
+      symbol: "SS3L", 
+      description: "Breaking below last 3-candle low → weakness",
+      boldKeys: ['pl3l', 'ltp']
+    };
+  }
+  
+  // Priority 10: abs(LTP - PL3H) <= 0.0005 * LTP
+  if (pl3h > 0 && ltpFloat > 0 && Math.abs(ltpFloat - pl3h) <= 0.0005 * ltpFloat) {
+    return { 
+      signal: "Watch PL3H", 
+      symbol: "W3H", 
+      description: "Approaching 3-candle high (resistance)",
+      boldKeys: ['pl3h', 'ltp']
+    };
+  }
+  
+  // Priority 11: abs(LTP - PL3L) <= 0.0005 * LTP
+  if (pl3l > 0 && ltpFloat > 0 && Math.abs(ltpFloat - pl3l) <= 0.0005 * ltpFloat) {
+    return { 
+      signal: "Watch PL3L", 
+      symbol: "W3L", 
+      description: "Approaching 3-candle low (support)",
+      boldKeys: ['pl3l', 'ltp']
+    };
+  }
+  
+  // Priority 12: abs(LTP - PL3M) <= 0.0003 * LTP
+  if (pl3m > 0 && ltpFloat > 0 && Math.abs(ltpFloat - pl3m) <= 0.0003 * ltpFloat) {
+    return { 
+      signal: "Watch PL3M", 
+      symbol: "W3M", 
+      description: "Around midpoint of last 3 candles (consolidation)",
+      boldKeys: ['pl3m', 'ltp']
+    };
+  }
+  
+  // Priority 13: abs(LTP - HIGH) <= 0.0005 * LTP
+  if (high > 0 && ltpFloat > 0 && Math.abs(ltpFloat - high) <= 0.0005 * ltpFloat) {
+    return { 
+      signal: "Watch Resistance", 
+      symbol: "WR", 
+      description: "Near today's high",
+      boldKeys: ['high', 'ltp']
+    };
+  }
+  
+  // Priority 14: abs(LTP - LOW) <= 0.0005 * LTP
+  if (low > 0 && ltpFloat > 0 && Math.abs(ltpFloat - low) <= 0.0005 * ltpFloat) {
+    return { 
+      signal: "Watch Support", 
+      symbol: "WS", 
+      description: "Near today's low",
+      boldKeys: ['low', 'ltp']
+    };
+  }
+  
+  // Priority 15: LTP > PDH
+  if (pdh > 0 && ltpFloat > pdh) {
+    return { 
+      signal: "Strong BUY Continuation", 
+      symbol: "SB+", 
+      description: "Above previous day's high",
+      boldKeys: ['pdh', 'ltp']
+    };
+  }
+  
+  // Priority 16: LTP < PDL
+  if (pdl > 0 && ltpFloat < pdl) {
+    return { 
+      signal: "Strong SELL Continuation", 
+      symbol: "SS-", 
+      description: "Below previous day's low",
+      boldKeys: ['pdl', 'ltp']
+    };
+  }
+  
+  // Priority 17: LTP >= PDL and LTP <= PDH
+  if (pdl > 0 && pdh > 0 && ltpFloat >= pdl && ltpFloat <= pdh) {
+    return { 
+      signal: "Watch Range", 
+      symbol: "WRG", 
+      description: "Inside previous day's range",
+      boldKeys: ['pdl', 'pdh', 'ltp']
+    };
+  }
+  
+  // Priority 18: abs(LTP - PDC) <= 0.0002 * LTP
+  if (pdc > 0 && ltpFloat > 0 && Math.abs(ltpFloat - pdc) <= 0.0002 * ltpFloat) {
+    return { 
+      signal: "Watch PDC", 
+      symbol: "WZc", 
+      description: "Near previous close",
+      boldKeys: ['pdc', 'ltp']
+    };
+  }
+  
+  // Priority 19: Default (no match)
+  return { 
+    signal: "Neutral / Wait", 
+    symbol: "–", 
+    description: "No signal",
+    boldKeys: []
+  };
+}
+
+function renderUnderlying(js, strategy){
+  const underlyingBody = document.getElementById('underlying-body');
+  const underlyingHeader = document.getElementById('underlying-header-row');
+  if (!underlyingBody) return;
+  
+  underlyingBody.innerHTML = "";
+  
+  // Update header based on strategy
+  if (strategy === "m75") {
+    if (underlyingHeader) {
+      underlyingHeader.innerHTML = `
+        <th>Stock / Index</th>
+        <th>Timeframe</th>
+        <th>PL3H</th>
+        <th>PL3M</th>
+        <th>PL3L</th>
+        <th>LTP</th>
+      `;
+    }
+    // Show single row with PL3H/PL3M/PL3L
+    const tr = document.createElement('tr');
+    const conditions = js.m75_conditions || {};
+    
+    // Apply visual alerts (highlight/bold when nearing)
+    const pl3hClass = conditions.pl3h_alert ? 'm75-alert-near' : '';
+    const pl3mClass = conditions.pl3m_alert ? 'm75-alert-near' : '';
+    const pl3lClass = conditions.pl3l_alert ? 'm75-alert-near' : '';
+    
+    // Add signal indicators with new labels
+    const pl3hSignal = conditions.pl3h_signal ? ` <span class="m75-signal m75-signal-buy">${conditions.pl3h_signal}</span>` : '';
+    const pl3mSignal = conditions.pl3m_signal ? ` <span class="m75-signal m75-signal-watch">${conditions.pl3m_signal}</span>` : '';
+    const pl3lSignal = conditions.pl3l_signal ? ` <span class="m75-signal m75-signal-buy-opposite">${conditions.pl3l_signal}</span>` : '';
+    
+    tr.innerHTML = `
+      <td style="font-weight: 600;">${js.symbol}</td>
+      <td style="font-weight: 600;">75M</td>
+      <td class="${pl3hClass}" style="font-weight: 600;">${formatPrice(js.pl3h)}${pl3hSignal}</td>
+      <td class="${pl3mClass}" style="font-weight: 600;">${formatPrice(js.pl3m)}${pl3mSignal}</td>
+      <td class="${pl3lClass}" style="font-weight: 600;">${formatPrice(js.pl3l)}${pl3lSignal}</td>
+      <td style="font-weight: 600; color: var(--primary);">${formatPrice(js.ltp)}</td>
+    `;
+    underlyingBody.appendChild(tr);
+  } else if (strategy === "box") {
+    // Box Strategy: show all columns in order: Timeframe, PDO, PDH, PDL, PDC, PL3H, PL3M, PL3L, High, Mid, Low, BR.T, BR.R, BE.T, BE.R, LTP, Signal, Symbol
+    if (underlyingHeader) {
+      underlyingHeader.innerHTML = `
+        <th>Timeframe</th>
+        <th>PDO</th>
+        <th>PDH</th>
+        <th>PDL</th>
+        <th>PDC</th>
+        <th>PL3H</th>
+        <th>PL3M</th>
+        <th>PL3L</th>
+        <th>High</th>
+        <th>Mid</th>
+        <th>Low</th>
+        <th>BR.T</th>
+        <th>BR.R</th>
+        <th>BE.T</th>
+        <th>BE.R</th>
+        <th>LTP</th>
+        <th>Signal</th>
+        <th>Symbol</th>
+      `;
+    }
+    const timeframes = js.timeframes || [];
+    const ltp = js.ltp ? parseFloat(js.ltp) : null;
+    
+    if (timeframes.length === 0) {
+      underlyingBody.innerHTML = '<tr><td colspan="18" class="loading">No data available</td></tr>';
+      return;
+    }
+    
+    timeframes.forEach(tf => {
+      const tr = document.createElement('tr');
+      const ohlc = tf.ohlc || {};
+      const boxValues = tf.box_values || {};
+      
+      // Calculate signal based on priority conditions
+      const signalData = calculateSignal(ltp, boxValues, ohlc);
+      
+      // Determine background color for Signal column based on signal type
+      let signalBg = '#f3f4f6'; // Default gray
+      let signalColor = '#000';
+      if (signalData.symbol === 'SB' || signalData.symbol === 'SB+' || signalData.symbol === 'SB3H') {
+        signalBg = '#10b981'; // Green for Strong BUY
+        signalColor = '#fff';
+      } else if (signalData.symbol === 'SS' || signalData.symbol === 'SS-' || signalData.symbol === 'SS3L') {
+        signalBg = '#ef4444'; // Red for Strong SELL
+        signalColor = '#fff';
+      } else if (signalData.symbol === 'BZ') {
+        signalBg = '#34d399'; // Light green for BUY Zone
+        signalColor = '#000';
+      } else if (signalData.symbol === 'SZ') {
+        signalBg = '#f87171'; // Light red for SELL Zone
+        signalColor = '#000';
+      } else if (signalData.symbol.startsWith('WZ') || signalData.symbol.startsWith('W3') || signalData.symbol === 'WR' || signalData.symbol === 'WS' || signalData.symbol === 'WRG' || signalData.symbol === 'WZc') {
+        signalBg = '#fbbf24'; // Yellow for Watch Zone
+        signalColor = '#000';
+      }
+      
+      // Helper function to format price with bold if key matches
+      const formatPriceWithBold = (value, key) => {
+        const price = formatPrice(value);
+        if (signalData.boldKeys.includes(key)) {
+          return `<strong>${price}</strong>`;
+        }
+        return price;
+      };
+      
+      tr.innerHTML = `
+        <td style="font-weight: 600;">${tf.timeframe}</td>
+        <td>${formatPrice(boxValues.pdo)}</td>
+        <td>${formatPriceWithBold(boxValues.pdh, 'pdh')}</td>
+        <td>${formatPriceWithBold(boxValues.pdl, 'pdl')}</td>
+        <td>${formatPriceWithBold(boxValues.pdc, 'pdc')}</td>
+        <td>${formatPriceWithBold(boxValues.pl3h, 'pl3h')}</td>
+        <td>${formatPriceWithBold(boxValues.pl3m, 'pl3m')}</td>
+        <td>${formatPriceWithBold(boxValues.pl3l, 'pl3l')}</td>
+        <td style="background: #fbbf24; font-weight: 600;">${formatPriceWithBold(ohlc.h, 'high')}</td>
+        <td style="background: #fbbf24; font-weight: 600;">${formatPrice(boxValues.fcm)}</td>
+        <td style="background: #fbbf24; font-weight: 600;">${formatPriceWithBold(ohlc.l, 'low')}</td>
+        <td style="background: #10b981; color: white; font-weight: 600;">${formatPriceWithBold(boxValues.br_t, 'br_t')}</td>
+        <td style="background: #10b981; color: white; font-weight: 600;">${formatPriceWithBold(boxValues.br_r, 'br_r')}</td>
+        <td style="background: #ef4444; color: white; font-weight: 600;">${formatPriceWithBold(boxValues.be_t, 'be_t')}</td>
+        <td style="background: #ef4444; color: white; font-weight: 600;">${formatPriceWithBold(boxValues.be_r, 'be_r')}</td>
+        <td style="font-weight: 600; color: var(--primary);">${formatPriceWithBold(ltp, 'ltp')}</td>
+        <td style="background: ${signalBg}; color: ${signalColor}; font-weight: 600; text-align: center; cursor: help;" title="${signalData.description}">${signalData.signal}</td>
+        <td style="background: ${signalBg}; color: ${signalColor}; font-weight: 600; text-align: center; cursor: help;" title="${signalData.description}">${signalData.symbol}</td>
+      `;
+      underlyingBody.appendChild(tr);
+    });
+  } else if (strategy === "m75") {
+    // M75 Strategy: show single row with PL3H/PL3M/PL3L (already handled above)
+    // This else-if is just for clarity, but m75 is already handled in the first if block
+  }
+}
+
+function render(js, strategy){
+  // For Box Strategy, use special rendering
+  if (strategy === "box") {
+    renderBoxStrategy(js);
+    return;
+  }
+  
+  // Show default table, hide box tables for non-box strategies
+  const defaultTable = document.getElementById('option-chain-table');
+  const boxTablesContainer = document.getElementById('box-strategy-tables');
+  if (defaultTable) {
+    const tableWrap = defaultTable.closest('.table-wrap');
+    if (tableWrap) tableWrap.style.display = '';
+  }
+  if (boxTablesContainer) boxTablesContainer.style.display = 'none';
+  
+  body.innerHTML = "";
+  const strikes = js.strikes || [];
+  
+  if (strikes.length === 0) {
+    body.innerHTML = '<tr><td colspan="11" class="loading">No data available</td></tr>';
+    return;
+  }
+  
+  // Update table headers based on strategy
+  const headerRow1 = document.getElementById('option-header-row1');
+  const headerRow2 = document.getElementById('option-header-row2');
+  
+  if (strategy === "m75") {
+    if (headerRow1) {
+      headerRow1.innerHTML = `
+        <th colspan="4">CALLS (CE)</th>
+        <th>STRIKE PRICE</th>
+        <th colspan="4">PUTS (PE)</th>
+      `;
+    }
+    if (headerRow2) {
+      headerRow2.innerHTML = `
+        <th>PL3H</th>
+        <th>PL3M</th>
+        <th>PL3L</th>
+        <th>LTP</th>
+        <th id="spot-price-header" class="col-strike">—</th>
+        <th>LTP</th>
+        <th>PL3L</th>
+        <th>PL3M</th>
+        <th>PL3H</th>
+      `;
+    }
+  }
+  
+  // Update spot price in header
+  const spotPrice = js.ltp ? parseFloat(js.ltp).toFixed(2) : "—";
+  const spotHeader = document.getElementById('spot-price-header');
+  if (spotHeader) {
+    spotHeader.textContent = spotPrice;
+  }
+  
+  strikes.forEach(r=>{
+    const tr = document.createElement('tr');
+    tr.dataset.strike = r.strike;
+    
+    if (strategy === "m75") {
+      // M75 Strategy: Show PL3H, PL3M, PL3L, LTP with conditions
+      const ce = r.ce || {};
+      const pe = r.pe || {};
+      const ceLtp = ce.ltp !== undefined ? ce.ltp : null;
+      const peLtp = pe.ltp !== undefined ? pe.ltp : null;
+      
+      // Get underlying conditions from main response (for spot price comparison)
+      const underlyingConditions = js.m75_conditions || {};
+      const underlyingPl3 = js.underlying_pl3 || {};
+      const spotLtp = parseFloat(js.ltp) || 0;
+      const underlyingPl3h = parseFloat(underlyingPl3.pl3h) || 0;
+      const underlyingPl3m = parseFloat(underlyingPl3.pl3m) || 0;
+      const underlyingPl3l = parseFloat(underlyingPl3.pl3l) || 0;
+      
+      // Apply conditions based on spot price vs underlying PL3H/PL3M/PL3L
+      // These conditions apply to the option premium table
+      const showPl3hSignal = spotLtp > underlyingPl3h && underlyingPl3h > 0;
+      const showPl3mSignal = underlyingConditions.pl3m_signal && underlyingPl3m > 0;
+      const showPl3lSignal = spotLtp < underlyingPl3l && underlyingPl3l > 0;
+      
+      // Get signal labels
+      const pl3hSignalLabel = underlyingConditions.pl3h_signal || '';
+      const pl3mSignalLabel = underlyingConditions.pl3m_signal || '';
+      const pl3lSignalLabel = underlyingConditions.pl3l_signal || '';
+      
+      // CE side: Check if CE LTP is near CE PL3H/PL3M/PL3L (for visual alert)
+      const cePl3h = parseFloat(ce.pl3h) || 0;
+      const cePl3m = parseFloat(ce.pl3m) || 0;
+      const cePl3l = parseFloat(ce.pl3l) || 0;
+      const ceLtpFloat = parseFloat(ceLtp) || 0;
+      
+      const cePl3hNear = cePl3h > 0 && ceLtpFloat > 0 && Math.abs(ceLtpFloat - cePl3h) / cePl3h <= 0.01;
+      const cePl3mNear = cePl3m > 0 && ceLtpFloat > 0 && Math.abs(ceLtpFloat - cePl3m) / cePl3m <= 0.01;
+      const cePl3lNear = cePl3l > 0 && ceLtpFloat > 0 && Math.abs(ceLtpFloat - cePl3l) / cePl3l <= 0.01;
+      
+      // PE side: Check if PE LTP is near PE PL3H/PL3M/PL3L
+      const pePl3h = parseFloat(pe.pl3h) || 0;
+      const pePl3m = parseFloat(pe.pl3m) || 0;
+      const pePl3l = parseFloat(pe.pl3l) || 0;
+      const peLtpFloat = parseFloat(peLtp) || 0;
+      
+      const pePl3hNear = pePl3h > 0 && peLtpFloat > 0 && Math.abs(peLtpFloat - pePl3h) / pePl3h <= 0.01;
+      const pePl3mNear = pePl3m > 0 && peLtpFloat > 0 && Math.abs(peLtpFloat - pePl3m) / pePl3m <= 0.01;
+      const pePl3lNear = pePl3l > 0 && peLtpFloat > 0 && Math.abs(peLtpFloat - pePl3l) / pePl3l <= 0.01;
+      
+      // Build signal badges for CE side
+      const cePl3hSignal = showPl3hSignal ? ` <span class="m75-signal m75-signal-buy">${pl3hSignalLabel}</span>` : '';
+      const cePl3mSignal = showPl3mSignal ? ` <span class="m75-signal m75-signal-watch">${pl3mSignalLabel}</span>` : '';
+      const cePl3lSignal = showPl3lSignal ? ` <span class="m75-signal m75-signal-buy-opposite">${pl3lSignalLabel}</span>` : '';
+      
+      // Build signal badges for PE side
+      const pePl3hSignal = showPl3hSignal ? ` <span class="m75-signal m75-signal-buy">${pl3hSignalLabel}</span>` : '';
+      const pePl3mSignal = showPl3mSignal ? ` <span class="m75-signal m75-signal-watch">${pl3mSignalLabel}</span>` : '';
+      const pePl3lSignal = showPl3lSignal ? ` <span class="m75-signal m75-signal-buy-opposite">${pl3lSignalLabel}</span>` : '';
+      
+      tr.innerHTML = `
+        <td class="${cePl3hNear ? 'm75-alert-near' : ''}" style="font-weight: 600;">${formatPrice(ce.pl3h)}${cePl3hSignal}</td>
+        <td class="${cePl3mNear ? 'm75-alert-near' : ''}" style="font-weight: 600;">${formatPrice(ce.pl3m)}${cePl3mSignal}</td>
+        <td class="${cePl3lNear ? 'm75-alert-near' : ''}" style="font-weight: 600;">${formatPrice(ce.pl3l)}${cePl3lSignal}</td>
+        <td style="font-weight: 600; color: var(--primary);">${formatPrice(ceLtp)}</td>
+        <td class="col-strike">${r.strike}</td>
+        <td style="font-weight: 600; color: var(--primary);">${formatPrice(peLtp)}</td>
+        <td class="${pePl3lNear ? 'm75-alert-near' : ''}" style="font-weight: 600;">${formatPrice(pe.pl3l)}${pePl3lSignal}</td>
+        <td class="${pePl3mNear ? 'm75-alert-near' : ''}" style="font-weight: 600;">${formatPrice(pe.pl3m)}${pePl3mSignal}</td>
+        <td class="${pePl3hNear ? 'm75-alert-near' : ''}" style="font-weight: 600;">${formatPrice(pe.pl3h)}${pePl3hSignal}</td>
+      `;
+      body.appendChild(tr);
+    }
+  });
+  // color rows low->high: find ATM closest to ltp
+  const rows = Array.from(body.querySelectorAll('tr'));
+  if(!rows.length) return;
+  const ltp = Number(js.ltp);
+  let atm = null, md = Infinity;
+  rows.forEach(r=>{
+    const s = Number(r.dataset.strike);
+    const diff = Math.abs(s - ltp);
+    if(diff < md){ md = diff; atm = r; }
+  });
+  const atmStrike = Number(atm.dataset.strike);
+  rows.forEach(r=>{
+    r.classList.remove('above','below','atm');
+    const s = Number(r.dataset.strike);
+    if(s === atmStrike) r.classList.add('atm');
+    else if(s < atmStrike) r.classList.add('above');
+    else r.classList.add('below');
+  });
+}
+
+// Handle strategy change - lock timeframe for M75, show/hide tables for Box Strategy
+document.getElementById('strategy').addEventListener('change', function(e) {
+  const strategy = e.target.value;
+  const tfSelect = document.getElementById('tf');
+  const m75Info = document.getElementById('m75-timeframe-info');
+  const defaultTable = document.getElementById('option-chain-table');
+  const boxTablesContainer = document.getElementById('box-strategy-tables');
+  
+  if (strategy === 'm75') {
+    // Lock timeframe to 75min (we'll use a special value or handle it in backend)
+    tfSelect.disabled = true;
+    tfSelect.style.opacity = '0.6';
+    tfSelect.style.cursor = 'not-allowed';
+    m75Info.style.display = 'block';
+    // Show default table, hide box tables
+    if (defaultTable) {
+      const tableWrap = defaultTable.closest('.table-wrap');
+      if (tableWrap) tableWrap.style.display = '';
+    }
+    if (boxTablesContainer) boxTablesContainer.style.display = 'none';
+    // Trigger fetch with M75 strategy
+    fetchChain();
+  } else if (strategy === 'box') {
+    // Box Strategy: enable timeframe selection
+    tfSelect.disabled = false;
+    tfSelect.style.opacity = '1';
+    tfSelect.style.cursor = 'pointer';
+    m75Info.style.display = 'none';
+    // Hide default table, show box tables
+    if (defaultTable) {
+      const tableWrap = defaultTable.closest('.table-wrap');
+      if (tableWrap) tableWrap.style.display = 'none';
+    }
+    if (boxTablesContainer) boxTablesContainer.style.display = 'block';
+    // Trigger fetch with Box strategy
+    fetchChain();
+  }
+});
+
+document.getElementById('fetchBtn').addEventListener('click', fetchChain);
+document.getElementById('symbol').addEventListener('change', fetchChain);
+document.getElementById('tf').addEventListener('change', fetchChain);
+document.getElementById('auto').addEventListener('change', function(e){
+  if(e.target.checked){ intervalId = setInterval(fetchChain, 30000); }
+  else { clearInterval(intervalId); intervalId = null; }
+});
+
+// initial load - check auth first
+checkAuth().then(authorized => {
+  if(authorized){
+    fetchChain();
+  }
+});
+</script>
+</body>
+</html>
