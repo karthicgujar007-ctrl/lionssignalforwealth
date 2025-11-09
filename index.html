@@ -674,7 +674,7 @@ let intervalId = null;
 
 async function checkAuth(){
   try{
-    const res = await fetch('/api/auth_status');
+    const res = await fetch('./access_token.json');
     const js = await res.json();
     const authAlert = document.getElementById('authAlert');
     if(!js.authorized){
@@ -1544,4 +1544,5 @@ checkAuth().then(authorized => {
 });
 </script>
 </body>
+
 </html>
