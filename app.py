@@ -2798,7 +2798,7 @@ def start_flask():
             print("✅ SSL certificates found, starting HTTPS Flask server...")
             print("⚠️  Browser will show 'Not Secure' warning - this is normal for self-signed certs")
             print("   Click 'Advanced' -> 'Proceed to 127.0.0.1' to continue")
-            app.run(host="127.0.0.1", port=5000, debug=True, ssl_context=(cert_file, key_file))
+            # app.run(host="127.0.0.1", port=5000, debug=True, ssl_context=(cert_file, key_file))
         else:
             print("❌ SSL certificates not found. Cannot start HTTPS server.")
     else:
@@ -2817,4 +2817,8 @@ if __name__ == "__main__":
     print("🚀 Starting Flask server...")
     print("=" * 70 + "\n")
 
-    start_flask()
+    #start_flask() 
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
+
